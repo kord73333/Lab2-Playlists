@@ -1,0 +1,58 @@
+/* Переменные для светлой темы (по умолчанию) */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #000000;
+    --card-bg: #ffffff;
+    --header-bg: #f0f0f0;
+    --muted-color: #666666;
+}
+
+/* Переменные для тёмной темы */
+html[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-bg: #2a2a2a;
+    --header-bg: #333333;
+    --muted-color: #aaaaaa;
+}
+
+/* Базовые стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card small {
+    color: var(--muted-color);
+}
+
+.btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 9px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover { background: #0056b3; }

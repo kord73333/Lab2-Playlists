@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои Плейлисты</title>
+    <link rel="stylesheet" href="{% static 'playlists/style.css' %}">
+</head>
+<body>
+    <button id="theme-toggle" style="cursor: pointer; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+        🌙 Сменить тему
+    </button>
+
+    <div class="container">
+        <h1>Список плейлистов</h1>
+        <a href="{% url 'playlist_create' %}" class="btn">Добавить плейлист</a>
+        <hr>
+        {% for item in playlists %}
+            <div class="card">
+                <h2>{{ item.title }} <small style="color: #888;">({{ item.genre }})</small></h2>
+                <p>{{ item.description }}</p>
+            </div>
+        {% empty %}
+            <p>Плейлистов пока нет.</p>
+        {% endfor %}
+    </div>
+
+    <script src="{% static 'playlists/theme.js' %}"></script>
+</body>
+</html>

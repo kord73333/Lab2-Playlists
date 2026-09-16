@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать плейлист</title>
+    <link rel="stylesheet" href="{% static 'playlists/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Создать новый плейлист</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Сохранить</button>
+        </form>
+        <br>
+        <a href="{% url 'playlist_list' %}">← Назад к списку</a>
+    </div>
+</body>
+</html>
